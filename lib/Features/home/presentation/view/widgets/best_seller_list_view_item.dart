@@ -25,7 +25,6 @@ class BestSellerListViewItem extends StatelessWidget {
                 width: MediaQuery.of(context).size.width * .2,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(8),
-                 // color: Colors.red,
                   image: const DecorationImage(
                     fit: BoxFit.fill,
                     image: AssetImage(
@@ -61,15 +60,11 @@ class BestSellerListViewItem extends StatelessWidget {
                   const SizedBox(
                     height: 3,
                   ),
-                 const Row(
+                  const Row(
                     children: [
-                      Text(
-                        '19.9 ',
-                        style:
-                            Styles.textStyle20
-                      ),
-                       Spacer(),
-                       BookRating(),
+                      Text('19.9 € ', style: Styles.textStyle20),
+                      Spacer(),
+                      BookRating(),
                     ],
                   )
                 ],
