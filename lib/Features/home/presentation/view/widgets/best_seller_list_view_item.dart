@@ -25,7 +25,7 @@ class BestSellerListViewItem extends StatelessWidget {
                 width: MediaQuery.of(context).size.width * .2,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(8),
-                  color: Colors.red,
+                 // color: Colors.red,
                   image: const DecorationImage(
                     fit: BoxFit.fill,
                     image: AssetImage(
