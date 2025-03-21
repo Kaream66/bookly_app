@@ -3,12 +3,13 @@ import 'package:bookly_app/Features/home/presentation/view/widgets/books_action.
 import 'package:bookly_app/Features/home/presentation/view/widgets/custom_book_image.dart';
 import 'package:bookly_app/core/utils/styles.dart';
 import 'package:flutter/material.dart';
+
 class BookDetailsSection extends StatelessWidget {
   const BookDetailsSection({super.key});
 
   @override
   Widget build(BuildContext context) {
-        var width = MediaQuery.of(context).size.width;
+    var width = MediaQuery.of(context).size.width;
 
     return Column(
       children: [
