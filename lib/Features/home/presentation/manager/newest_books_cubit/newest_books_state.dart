@@ -7,17 +7,17 @@ sealed class NewsetBooksState extends Equatable {
   List<Object> get props => [];
 }
 
-final class NewsetBooksInitial extends NewsetBooksState {}
+final class NewestBooksInitial extends NewsetBooksState {}
 
-final class NewsetBooksLoading extends NewsetBooksState {}
+final class NewestBooksLoading extends NewsetBooksState {}
 
-final class NewsetBooksFailure extends NewsetBooksState {
+final class NewestBooksFailure extends NewsetBooksState {
   final String errMessage;
-  const NewsetBooksFailure(this.errMessage);
+  const NewestBooksFailure(this.errMessage);
 }
 
-final class NewsetBooksSuccess extends NewsetBooksState {
+final class NewestBooksSuccess extends NewsetBooksState {
   final List<BookModel> books;
 
- const NewsetBooksSuccess({required this.books});
+ const NewestBooksSuccess({required this.books});
 }
