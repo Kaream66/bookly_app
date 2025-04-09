@@ -12,7 +12,9 @@ class SimillarBooksListView extends StatelessWidget {
         itemBuilder: (context, index) {
           return const Padding(
             padding: EdgeInsets.symmetric(horizontal: 5),
-            child: CustomBookImage(),
+            child: CustomBookImage(
+              imageUrl: 'https://www.orgodigital.com/wp-content/uploads/2024/11/Flutter-jpg.jpg',
+            ),
           );
         },
         scrollDirection: Axis.horizontal,

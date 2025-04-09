@@ -15,7 +15,9 @@ class BookDetailsSection extends StatelessWidget {
       children: [
         Padding(
           padding: EdgeInsets.symmetric(horizontal: width * .2),
-          child: const CustomBookImage(),
+          child: const CustomBookImage(
+            imageUrl: 'https://www.orgodigital.com/wp-content/uploads/2024/11/Flutter-jpg.jpg',
+          ),
         ),
         const SizedBox(
           height: 30,
