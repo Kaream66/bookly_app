@@ -8,20 +8,26 @@ import 'package:dio/dio.dart';
 class HomeRepoImpl implements HomeRepo {
   final ApiService apiService;
 
-  HomeRepoImpl( this.apiService);
+  HomeRepoImpl(this.apiService);
 
   @override
   Future<Either<Failure, List<BookModel>>> fetchNewestBooks() async {
     try {
       var data = await apiService.get(
         endPoint:
-            'volumes?Filtering=free-ebooks&q=subject:computer scince&Sorting=newest',
+            'volumes?Filtering=free-ebooks&q=computer scince&Sorting=newest',
       );
       List<BookModel> books = [];
       for (var item in data['items']) {
-        books.add(
-          BookModel.fromJson(item),
-        );
+        try {
+          books.add(
+            BookModel.fromJson(item),
+          );
+        } catch (e) {
+          books.add(
+            BookModel.fromJson(item),
+          );
+        }
       }
       return right(books);
     } catch (e) {
@@ -39,11 +45,10 @@ class HomeRepoImpl implements HomeRepo {
   }
 
   @override
-  Future<Either<Failure, List<BookModel>>> fetchFeaturedBooks() async{
+  Future<Either<Failure, List<BookModel>>> fetchFeaturedBooks() async {
     try {
       var data = await apiService.get(
-        endPoint:
-            'volumes?Filtering=free-ebooks&q=subject:programming',
+        endPoint: 'volumes?Filtering=free-ebooks&q=subject:programming',
       );
       List<BookModel> books = [];
       for (var item in data['items']) {
