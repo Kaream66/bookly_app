@@ -13,21 +13,18 @@ class BestSellerListView extends StatelessWidget {
     return BlocBuilder<NewsetBooksCubit, NewsetBooksState>(
       builder: (context, state) {
         if (state is NewestBooksSuccess) {
-          return Padding(
-            padding: const EdgeInsets.symmetric(vertical: 10),
-            child: ListView.builder(
-              physics: const NeverScrollableScrollPhysics(),
-              padding: EdgeInsets.zero,
-              itemBuilder: (context, index) {
-                return  Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 8.0),
-                  child: BookListViewItem(
-                    bookModel: state.books[index],
-                  ),
-                );
-              },
-              itemCount: state.books.length,
-            ),
+          return ListView.builder(
+            physics: const NeverScrollableScrollPhysics(),
+            padding: EdgeInsets.zero,
+            itemBuilder: (context, index) {
+              return  Padding(
+                padding: const EdgeInsets.symmetric(vertical: 8.0),
+                child: BookListViewItem(
+                  bookModel: state.books[index],
+                ),
+              );
+            },
+            itemCount: state.books.length,
           );
         } else if (state is NewestBooksFailure) {
           return CustomErrmessageWidget(errMessage: state.errMessage);
