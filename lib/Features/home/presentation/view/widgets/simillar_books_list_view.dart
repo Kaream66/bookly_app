@@ -16,12 +16,14 @@ class SimillarBooksListView extends StatelessWidget {
           return SizedBox(
             height: MediaQuery.of(context).size.height * .17,
             child: ListView.builder(
+              itemCount: state.books.length,
               itemBuilder: (context, index) {
-                return const Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 5),
+                return Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 5),
                   child: CustomBookImage(
                     imageUrl:
-                        'https://www.orgodigital.com/wp-content/uploads/2024/11/Flutter-jpg.jpg',
+                        state.books[index].volumeInfo.imageLinks?.thumbnail ??
+                            '',
                   ),
                 );
               },
