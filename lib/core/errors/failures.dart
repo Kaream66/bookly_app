@@ -47,7 +47,7 @@ class ServerFailure extends Failure {
     } else if (statusCode == 500) {
       return ServerFailure('Server error, please try again later');
     } else {
-      return ServerFailure('Opps there sas an error please try again later');
+      return ServerFailure('Opps there was an error please try again later');
     }
   }
 }
