@@ -10,7 +10,7 @@ class SearchResultCubit extends Cubit<SearchResultState> {
 
    final HomeRepo homeRepo;
 
-  Future<void> fetchNewestBooks() async {
+  Future<void> fetchSearchResult() async {
     emit(SearchResultLoading());
     var result = await homeRepo.fetchNewestBooks();
     result.fold(
