@@ -8,7 +8,7 @@ part 'search_result_state.dart';
 class SearchResultCubit extends Cubit<SearchResultState> {
   SearchResultCubit( this.searchRepo) : super(SearchResultInitial());
 
-   final SerachRepo searchRepo;
+   final SearchRepo searchRepo;
 
   Future<void> fetchSearchResult() async {
     emit(SearchResultLoading());

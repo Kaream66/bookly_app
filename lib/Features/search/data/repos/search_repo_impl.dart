@@ -5,10 +5,10 @@ import 'package:bookly_app/core/utils/api_service.dart';
 import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
 
-class SearchRepoImpl implements SerachRepo {
+class SearchRepoImpl implements SearchRepo {
   final ApiService apiService;
 
-  SearchRepoImpl({required this.apiService});
+  SearchRepoImpl( this.apiService);
 
   @override
  Future<Either<Failure, List<BookModel>>> fetchSearchResult() async {
